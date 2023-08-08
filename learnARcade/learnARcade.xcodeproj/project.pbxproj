@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E55A1AC82A790F5B009014E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1AC72A790F5B009014E2 /* AppDelegate.swift */; };
-		E55A1ACA2A790F5B009014E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1AC92A790F5B009014E2 /* ContentView.swift */; };
+		E55A1ACA2A790F5B009014E2 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1AC92A790F5B009014E2 /* DiceView.swift */; };
 		E55A1ACC2A790F5B009014E2 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E55A1ACB2A790F5B009014E2 /* Experience.rcproject */; };
 		E55A1ACE2A790F5C009014E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55A1ACD2A790F5C009014E2 /* Assets.xcassets */; };
 		E55A1AD12A790F5C009014E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55A1AD02A790F5C009014E2 /* Preview Assets.xcassets */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		E55A1AC42A790F5B009014E2 /* learnARcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnARcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55A1AC72A790F5B009014E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E55A1AC92A790F5B009014E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E55A1AC92A790F5B009014E2 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		E55A1ACB2A790F5B009014E2 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		E55A1ACD2A790F5C009014E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E55A1AD02A790F5C009014E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				E55A1AC72A790F5B009014E2 /* AppDelegate.swift */,
-				E55A1AC92A790F5B009014E2 /* ContentView.swift */,
+				E55A1AC92A790F5B009014E2 /* DiceView.swift */,
 				E55A1ACB2A790F5B009014E2 /* Experience.rcproject */,
 				E55A1ACD2A790F5C009014E2 /* Assets.xcassets */,
 				E55A1ACF2A790F5C009014E2 /* Preview Content */,
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55A1ACA2A790F5B009014E2 /* ContentView.swift in Sources */,
+				E55A1ACA2A790F5B009014E2 /* DiceView.swift in Sources */,
 				E55A1AC82A790F5B009014E2 /* AppDelegate.swift in Sources */,
 				E55A1ACC2A790F5B009014E2 /* Experience.rcproject in Sources */,
 			);
@@ -271,9 +271,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"learnARcade/Preview Content\"";
+				DEVELOPMENT_TEAM = RGCGRRY3S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Augmented Reality";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -301,9 +302,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"learnARcade/Preview Content\"";
+				DEVELOPMENT_TEAM = RGCGRRY3S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Augmented Reality";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
