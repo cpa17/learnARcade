@@ -55,10 +55,9 @@
 		E55A1AC62A790F5B009014E2 /* learnARcade */ = {
 			isa = PBXGroup;
 			children = (
+				E58C9B312A8F503900A81E7E /* App */,
+				E58C9B302A8F501800A81E7E /* Dice */,
 				E5B168E72A827972002654AE /* Models */,
-				E55A1AC72A790F5B009014E2 /* AppDelegate.swift */,
-				E55A1AC92A790F5B009014E2 /* DiceView.swift */,
-				E58C9B2A2A8B793700A81E7E /* DiceARView.swift */,
 				E55A1ACD2A790F5C009014E2 /* Assets.xcassets */,
 				E55A1ACF2A790F5C009014E2 /* Preview Content */,
 			);
@@ -71,6 +70,23 @@
 				E55A1AD02A790F5C009014E2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E58C9B302A8F501800A81E7E /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				E55A1AC92A790F5B009014E2 /* DiceView.swift */,
+				E58C9B2A2A8B793700A81E7E /* DiceARView.swift */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
+		E58C9B312A8F503900A81E7E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E55A1AC72A790F5B009014E2 /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		E5B168E72A827972002654AE /* Models */ = {
