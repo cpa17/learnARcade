@@ -16,6 +16,7 @@ class DiceARView: ARView {
     private var correctButton: UIButton?
     private var wrongButton: UIButton?
     private var secondWrongButton: UIButton?
+    private var scoreLabel: UILabel?
     private var diceAnchor: Dice._Dice?
     private var isRolling: Bool = false
     private var answer: Int = 0
@@ -81,6 +82,17 @@ private extension DiceARView {
     
     func setupUI() {
         
+        self.scoreLabel = UILabel()
+        
+        guard let scoreLabel else {
+            return
+        }
+        
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        scoreLabel.textAlignment = .right
+        scoreLabel.text = "Score: 0"
+        self.addSubview(scoreLabel)
+        
         let session = self.session
         session.run(self.configuration)
         
@@ -135,6 +147,10 @@ private extension DiceARView {
     func handleCorrectAnswer() {
         
         self.score += 1
+        guard let scoreLabel else {
+            return
+        }
+        scoreLabel.text = "Score: \(self.score)"
         
         guard let diceAnchor = self.diceAnchor else {
             return
@@ -227,7 +243,7 @@ private extension DiceARView {
         self.randomNumberTwo = diceCount * Int.random(in: 1...6)
         
         while self.randomNumberOne == self.answer ||
-              self.randomNumberTwo == self.answer ||
+                self.randomNumberTwo == self.answer ||
                 self.randomNumberOne == self.randomNumberTwo {
             self.randomNumberOne = diceCount * Int.random(in: 1...6)
             self.randomNumberTwo = diceCount * Int.random(in: 1...6)

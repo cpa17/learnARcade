@@ -10,7 +10,7 @@ import SwiftUI
 struct DiceView : View {
     
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
+        ARViewContainer()
     }
 }
 
