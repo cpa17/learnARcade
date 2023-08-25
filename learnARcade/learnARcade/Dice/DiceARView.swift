@@ -25,34 +25,15 @@ class DiceARView: ARView {
     private var randomNumberOne: Int?
     private var randomNumberTwo: Int?
     private var positions: [CGFloat] = [
-        10,
+        20,
         (UIScreen.main.bounds.width / 3) + 10,
-        (2 * (UIScreen.main.bounds.width / 3)) + 10
+        (2 * (UIScreen.main.bounds.width / 3))
     ]
+    private var gameOverView: GameOverView?
     
-    override init(
-        frame frameRect: CGRect,
-        cameraMode: ARView.CameraMode,
-        automaticallyConfigureSession: Bool
-    ) {
-        super.init(
-            frame: frameRect,
-            cameraMode: cameraMode,
-            automaticallyConfigureSession: automaticallyConfigureSession
-        )
+    func configuration(_ diceCount: Int) {
         
-        self.setupUI()
-    }
-    
-    required init(frame frameRect: CGRect) {
-        super.init(frame: frameRect)
-        
-        self.setupUI()
-    }
-    
-    required init?(coder decoder: NSCoder) {
-        super.init(coder: decoder)
-        
+        self.diceCount = diceCount
         self.setupUI()
     }
 }
@@ -88,9 +69,20 @@ private extension DiceARView {
             return
         }
         
-        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        scoreLabel.textAlignment = .right
+        scoreLabel.frame = CGRect(
+            x: 20,
+            y: 50,
+            width: 150,
+            height: 30
+        )
+        
+        scoreLabel.font = .boldSystemFont(ofSize: 20)
+        scoreLabel.textAlignment = .center
         scoreLabel.text = "Score: 0"
+        scoreLabel.layer.backgroundColor = UIColor.orange.cgColor
+        scoreLabel.textColor = .white
+        scoreLabel.layer.cornerRadius = 15
+        scoreLabel.layer.masksToBounds = true
         self.addSubview(scoreLabel)
         
         let session = self.session
@@ -106,6 +98,20 @@ private extension DiceARView {
         
         guard let diceAnchor = self.diceAnchor else {
             return
+        }
+        
+        diceAnchor.actions.rotateDice.onAction = rotateDice(_:)
+        
+        print(diceCount)
+        
+        if diceCount > 1 {
+            for number in 2...diceCount {
+                if let clone = self.diceAnchor?.clone(recursive: true) {
+                    clone.children[0].transform.translation.x += Float.random(in: -0.03...0.03) * Float(number)
+                    clone.children[0].transform.translation.z += Float.random(in: -0.03...0.03) * Float(number)
+                    self.diceAnchor?.addChild(clone.children[0])
+                }
+            }
         }
         
         diceAnchor.dice?.transform.rotation = simd_quatf(angle: 0,axis: SIMD3<Float>(1,1,1))
@@ -131,8 +137,6 @@ private extension DiceARView {
             return
         }
         
-        diceAnchor.actions.rotateDice.onAction = rotateDice(_:)
-        
         if !self.isRolling {
             self.isRolling = true
             diceAnchor.notifications.startRolling.post()
@@ -156,6 +160,7 @@ private extension DiceARView {
             return
         }
         
+        self.answer = 0
         self.removeButtons()
         diceAnchor.notifications.startRolling.post()
         
@@ -167,6 +172,65 @@ private extension DiceARView {
     @objc
     func handleWrongAnswer() {
         
+        self.removeButtons()
+        self.diceAnchor?.dice?.transform.rotation = simd_quatf(angle: 0,axis: SIMD3<Float>(1,1,1))
+        
+        UIView.transition(
+            with: self,
+            duration: 0.25,
+            options: [.transitionCrossDissolve],
+            animations: {
+                self.scoreLabel?.isHidden = true
+                let frame = CGRect(
+                    x: .zero,
+                    y: .zero,
+                    width: UIScreen.main.bounds.width,
+                    height: UIScreen.main.bounds.height
+                )
+                self.gameOverView = GameOverView(frame: frame)
+                self.gameOverView?.backgroundColor = UIColor(red: 251/255, green: 245/255, blue: 242/255, alpha: 1.0)
+                
+                self.gameOverView?.gameOverButton.addTarget(self, action: #selector(self.handleNewStart), for: .touchUpInside)
+                
+                self.addSubview(self.gameOverView!)
+            },
+            completion: nil
+        )
+    }
+    
+    @objc
+    func handleNewStart() {
+        
+        self.score = 0
+        self.answer = 0
+        
+        guard let scoreLabel else {
+            return
+        }
+        scoreLabel.text = "Score: \(self.score)"
+        
+        self.isRolling = false
+        
+        UIView.transition(
+            with: self,
+            duration: 0.25,
+            options: [.transitionCrossDissolve],
+            animations: {
+                self.scoreLabel?.isHidden = false
+                self.gameOverView?.removeFromSuperview()
+            },
+            completion: nil
+        )
+    }
+    
+    @objc
+    func handleStart() {
+        
+        self.score = 0
+        guard let scoreLabel else {
+            return
+        }
+        scoreLabel.text = "Score: \(self.score)"
     }
 }
 
@@ -200,7 +264,7 @@ private extension DiceARView {
             fatalError("not possible number")
         }
         
-        self.answer = randomInt
+        self.answer += randomInt
     }
     
     func rotation(entity: Entity, angleX: Float, angleZ: Float) {
@@ -281,20 +345,21 @@ private extension DiceARView {
     
     func newButton(title: String, isCorrect: Bool, position: CGFloat) -> UIButton {
         
-        var configuration = UIButton.Configuration.filled()
-        configuration.title = title
-        configuration.baseForegroundColor = .black
-        configuration.baseBackgroundColor = .lightGray
-        configuration.cornerStyle = .medium
-        
-        let button = UIButton(configuration: configuration)
+        let button = UIButton(type: .custom)
         
         button.frame = CGRect(
             x: position,
-            y: self.frame.maxY - self.safeAreaInsets.bottom - 50,
+            y: self.frame.maxY - self.safeAreaInsets.bottom - 75,
             width: (UIScreen.main.bounds.width / 3) - 20,
-            height: 50
+            height: 60
         )
+        
+        button.setTitle(title, for: .normal)
+        button.backgroundColor = .orange
+        button.titleLabel?.font = .boldSystemFont(ofSize: 24)
+        button.titleLabel?.textColor = .white
+        button.layer.cornerRadius = 0.5 * button.bounds.size.height
+        button.clipsToBounds = true
         
         if isCorrect {
             button.addTarget(
@@ -311,5 +376,41 @@ private extension DiceARView {
         }
         
         return button
+    }
+}
+
+class GameOverView: UIView {
+    
+    private var gameOverLabel = UILabel(frame: CGRect(
+        x: .zero,
+        y: Int(UIScreen.main.bounds.height)/2 - 100,
+        width: Int(UIScreen.main.bounds.width),
+        height: 50)
+    )
+    
+    var gameOverButton = UIButton(frame: CGRect(
+        x: Int(UIScreen.main.bounds.width)/2 - 75,
+        y: Int(UIScreen.main.bounds.height)/2,
+        width: 150,
+        height: 40)
+    )
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        self.gameOverLabel.text = "Game over"
+        self.gameOverLabel.textAlignment = .center
+        self.gameOverLabel.textColor = .orange
+        self.gameOverLabel.font = .init(name: "Ribeye-Regular", size: 42)
+        
+        self.gameOverButton.setTitle("Neustart", for: .normal)
+        self.gameOverButton.backgroundColor = .orange
+        self.gameOverButton.titleLabel?.font = .boldSystemFont(ofSize: 24)
+        self.gameOverButton.titleLabel?.textColor = .white
+        self.gameOverButton.layer.cornerRadius = 0.5 * self.gameOverButton.bounds.size.height
+        self.gameOverButton.clipsToBounds = true
+        
+        self.addSubview(gameOverLabel)
+        self.addSubview(gameOverButton)
     }
 }
