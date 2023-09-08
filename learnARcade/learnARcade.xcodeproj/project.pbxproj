@@ -14,10 +14,9 @@
 		E55B10082A94A9F400BBB5C2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55B10072A94A9F400BBB5C2 /* MenuView.swift */; };
 		E55B100F2A94ADCC00BBB5C2 /* Ribeye-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E55B100E2A94ADCC00BBB5C2 /* Ribeye-Regular.ttf */; };
 		E55B10122A94C5CB00BBB5C2 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55B10112A94C5CB00BBB5C2 /* GamesView.swift */; };
-		E57CCBFC2AAB45220082AC6C /* BasketballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCBFB2AAB45220082AC6C /* BasketballView.swift */; };
-		E57CCBFE2AAB453A0082AC6C /* BasketballARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCBFD2AAB453A0082AC6C /* BasketballARView.swift */; };
-		E57CCC002AAB4CA00082AC6C /* Basketball.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E57CCBFF2AAB4CA00082AC6C /* Basketball.usdz */; };
-		E57CCC022AAB56450082AC6C /* football.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E57CCC012AAB56450082AC6C /* football.rcproject */; };
+		E57CCBFC2AAB45220082AC6C /* FootballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCBFB2AAB45220082AC6C /* FootballView.swift */; };
+		E57CCBFE2AAB453A0082AC6C /* FootballballARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCBFD2AAB453A0082AC6C /* FootballballARView.swift */; };
+		E57CCC022AAB56450082AC6C /* Football.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E57CCC012AAB56450082AC6C /* Football.rcproject */; };
 		E58C9B292A86511900A81E7E /* Dice.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E58C9B282A86511900A81E7E /* Dice.rcproject */; };
 		E58C9B2B2A8B793700A81E7E /* DiceARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C9B2A2A8B793700A81E7E /* DiceARView.swift */; };
 /* End PBXBuildFile section */
@@ -32,10 +31,9 @@
 		E55B100B2A94ABF400BBB5C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E55B100E2A94ADCC00BBB5C2 /* Ribeye-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ribeye-Regular.ttf"; sourceTree = "<group>"; };
 		E55B10112A94C5CB00BBB5C2 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
-		E57CCBFB2AAB45220082AC6C /* BasketballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballView.swift; sourceTree = "<group>"; };
-		E57CCBFD2AAB453A0082AC6C /* BasketballARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballARView.swift; sourceTree = "<group>"; };
-		E57CCBFF2AAB4CA00082AC6C /* Basketball.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Basketball.usdz; sourceTree = "<group>"; };
-		E57CCC012AAB56450082AC6C /* football.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = football.rcproject; sourceTree = "<group>"; };
+		E57CCBFB2AAB45220082AC6C /* FootballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballView.swift; sourceTree = "<group>"; };
+		E57CCBFD2AAB453A0082AC6C /* FootballballARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballballARView.swift; sourceTree = "<group>"; };
+		E57CCC012AAB56450082AC6C /* Football.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Football.rcproject; sourceTree = "<group>"; };
 		E58C9B282A86511900A81E7E /* Dice.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Dice.rcproject; sourceTree = "<group>"; };
 		E58C9B2A2A8B793700A81E7E /* DiceARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceARView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,8 +109,8 @@
 		E57CCBFA2AAB44FA0082AC6C /* Basketball */ = {
 			isa = PBXGroup;
 			children = (
-				E57CCBFB2AAB45220082AC6C /* BasketballView.swift */,
-				E57CCBFD2AAB453A0082AC6C /* BasketballARView.swift */,
+				E57CCBFB2AAB45220082AC6C /* FootballView.swift */,
+				E57CCBFD2AAB453A0082AC6C /* FootballballARView.swift */,
 			);
 			name = Basketball;
 			path = learnARcade/Basketball;
@@ -139,8 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				E58C9B282A86511900A81E7E /* Dice.rcproject */,
-				E57CCC012AAB56450082AC6C /* football.rcproject */,
-				E57CCBFF2AAB4CA00082AC6C /* Basketball.usdz */,
+				E57CCC012AAB56450082AC6C /* Football.rcproject */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,7 +204,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E57CCC002AAB4CA00082AC6C /* Basketball.usdz in Resources */,
 				E55A1AD12A790F5C009014E2 /* Preview Assets.xcassets in Resources */,
 				E55B100F2A94ADCC00BBB5C2 /* Ribeye-Regular.ttf in Resources */,
 				E55A1ACE2A790F5C009014E2 /* Assets.xcassets in Resources */,
@@ -223,10 +219,10 @@
 			files = (
 				E55B10122A94C5CB00BBB5C2 /* GamesView.swift in Sources */,
 				E55B10082A94A9F400BBB5C2 /* MenuView.swift in Sources */,
-				E57CCBFC2AAB45220082AC6C /* BasketballView.swift in Sources */,
+				E57CCBFC2AAB45220082AC6C /* FootballView.swift in Sources */,
 				E55A1ACA2A790F5B009014E2 /* DiceView.swift in Sources */,
-				E57CCBFE2AAB453A0082AC6C /* BasketballARView.swift in Sources */,
-				E57CCC022AAB56450082AC6C /* football.rcproject in Sources */,
+				E57CCBFE2AAB453A0082AC6C /* FootballballARView.swift in Sources */,
+				E57CCC022AAB56450082AC6C /* Football.rcproject in Sources */,
 				E58C9B292A86511900A81E7E /* Dice.rcproject in Sources */,
 				E55A1AC82A790F5B009014E2 /* AppDelegate.swift in Sources */,
 				E58C9B2B2A8B793700A81E7E /* DiceARView.swift in Sources */,

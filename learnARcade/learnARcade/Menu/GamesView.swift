@@ -113,7 +113,7 @@ struct GamesView: View {
                 
                 HStack{
                     NavigationLink {
-                        BasketballView()
+                        FootballView()
                     } label: {
                         Text("Test")
                             .padding(5)
