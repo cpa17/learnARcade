@@ -18,6 +18,7 @@ struct GamesView: View {
                 Text("Spiele")
                     .font(.custom("Ribeye-Regular", size: 40))
                     .frame(width: UIScreen.main.bounds.size.width)
+                    .foregroundColor(.black)
                     .background(Color(red: 229/255, green: 229/255, blue: 229/255))
                     .padding()
                 
@@ -25,6 +26,7 @@ struct GamesView: View {
                     .font(.title2)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)
+                    .foregroundColor(.black)
                     .frame(width: UIScreen.main.bounds.size.width, alignment: .leading)
                 
                 Divider()
@@ -32,6 +34,7 @@ struct GamesView: View {
                 Text("Würfeln")
                     .font(.largeTitle)
                     .padding(.horizontal, 20)
+                    .foregroundColor(.black)
                     .frame(width: UIScreen.main.bounds.size.width, alignment: .leading)
                 
                 HStack {

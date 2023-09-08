@@ -26,14 +26,20 @@ struct MenuView: View {
                 
                 Text("Wie heißt du?")
                     .font(.title)
+                    .foregroundColor(.black)
                 
-                TextField("Gib deinen Namen hier ein...", text: $name)
-                    .padding(10)
-                    .background(.white)
-                    .cornerRadius(10)
-                    .font(.title3)
-                    .padding(.horizontal, 25)
-                    .padding(.bottom, 50)
+                TextField(
+                    "",
+                    text: $name,
+                    prompt: Text("Gib deinen Namen hier ein...").foregroundColor(.gray)
+                )
+                .foregroundColor(.black)
+                .padding(10)
+                .background(.white)
+                .cornerRadius(10)
+                .font(.title3)
+                .padding(.horizontal, 25)
+                .padding(.bottom, 50)
                 
                 NavigationLink {
                     GamesView(name: self.name)
