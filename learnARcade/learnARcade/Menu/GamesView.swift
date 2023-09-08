@@ -102,6 +102,29 @@ struct GamesView: View {
                     .cornerRadius(50)
                 }
                 
+                Divider()
+                    .padding(.vertical, 10)
+                
+                Text("Teilen")
+                    .font(.largeTitle)
+                    .padding(.horizontal, 20)
+                    .foregroundColor(.black)
+                    .frame(width: UIScreen.main.bounds.size.width, alignment: .leading)
+                
+                HStack{
+                    NavigationLink {
+                        BasketballView()
+                    } label: {
+                        Text("Test")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                }
+                
                 Spacer()
             }
             .navigationBarBackButtonHidden(true)
@@ -138,6 +161,7 @@ private extension GamesView {
                     
                     Text("Anzahl der Würfel")
                         .font(.largeTitle)
+                        .foregroundColor(.black)
                     
                     HStack {
                         
@@ -159,6 +183,7 @@ private extension GamesView {
                         
                         Text(number.description)
                             .font(.title)
+                            .foregroundColor(.black)
                         
                         Spacer()
                         
