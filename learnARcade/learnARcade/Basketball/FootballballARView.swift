@@ -18,7 +18,6 @@ class FootballballARView: ARView {
     private var isShooting = false
     var level: Int = 1
     private var arguments = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    var coun
     
     
     func configuration() {
@@ -91,13 +90,13 @@ private extension FootballballARView {
         } else {
             
             let arg1 = self.level
-            
             guard let arg2 = arguments.first,
                   let answer = self.answerGen(arg1: arg1, arg2: arg2)
             else {
                 return
             }
             
+            arguments.removeFirst()
             self.addChilds(answer: answer, arg1: arg1, arg2: arg2)
         }
     }
@@ -298,24 +297,17 @@ private extension FootballballARView {
             return
         }
         
-        arguments.removeFirst()
+        footballAnchor.removeChild(question)
+        footballAnchor.removeChild(right)
+        footballAnchor.removeChild(wrong1)
+        footballAnchor.removeChild(wrong2)
+        footballAnchor.football1?.position = SIMD3<Float>(-0.21, 0, 0)
+        footballAnchor.football2?.position = SIMD3<Float>(0, 0, 0)
+        footballAnchor.football3?.position = SIMD3<Float>(0.21, 0, 0)
         
-        UIView.transition(
-            with: self,
-            duration: 1,
-            options: [.curveEaseInOut],
-            animations: {
-                footballAnchor.football1?.position = SIMD3<Float>(-0.21, 0, 0)
-                footballAnchor.football2?.position = SIMD3<Float>(0, 0, 0)
-                footballAnchor.football3?.position = SIMD3<Float>(0.21, 0, 0)
-                footballAnchor.removeChild(question)
-                footballAnchor.removeChild(right)
-                footballAnchor.removeChild(wrong1)
-                footballAnchor.removeChild(wrong2)
-                self.isShooting = false
-                self.setup()
-            },
-            completion: nil
-        )
+        DispatchQueue.main.async {
+            self.isShooting = false
+            self.setup()
+        }
     }
 }
