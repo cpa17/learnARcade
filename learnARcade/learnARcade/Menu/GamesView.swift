@@ -101,9 +101,13 @@ struct GamesView: View {
                     .font(.title2)
                     .cornerRadius(50)
                 }
+            }
+            
+            VStack {
                 
                 Divider()
                     .padding(.vertical, 10)
+                
                 
                 Text("Teilen")
                     .font(.largeTitle)
@@ -111,11 +115,59 @@ struct GamesView: View {
                     .foregroundColor(.black)
                     .frame(width: UIScreen.main.bounds.size.width, alignment: .leading)
                 
-                HStack{
+                HStack {
                     NavigationLink {
-                        FootballView()
+                        FootballView(level: 1)
                     } label: {
-                        Text("Test")
+                        Text("1")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                    
+                    NavigationLink {
+                        FootballView(level: 2)
+                    } label: {
+                        Text("2")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                    
+                    NavigationLink {
+                        FootballView(level: 3)
+                    } label: {
+                        Text("3")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                    
+                    NavigationLink {
+                        FootballView(level: 4)
+                    } label: {
+                        Text("4")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                    
+                    NavigationLink {
+                        FootballView(level: 5)
+                    } label: {
+                        Text("5")
                             .padding(5)
                     }
                     .buttonStyle(.borderedProminent)
@@ -125,11 +177,85 @@ struct GamesView: View {
                     .cornerRadius(50)
                 }
                 
+                HStack {
+                    NavigationLink {
+                        FootballView(level: 6)
+                    } label: {
+                        Text("6")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                    
+                    NavigationLink {
+                        FootballView(level: 7)
+                    } label: {
+                        Text("7")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                    
+                    NavigationLink {
+                        FootballView(level: 8)
+                    } label: {
+                        Text("8")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                    
+                    NavigationLink {
+                        FootballView(level: 9)
+                    } label: {
+                        Text("9")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                    
+                    NavigationLink {
+                        FootballView(level: 10)
+                    } label: {
+                        Text("10")
+                            .padding(5)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.orange)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .cornerRadius(50)
+                }
+                
+                NavigationLink {
+                    FootballView()
+                } label: {
+                    Text("Zufall")
+                        .padding(5)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.orange)
+                .foregroundColor(.white)
+                .font(.title2)
+                .cornerRadius(50)
+                
                 Spacer()
             }
-            .navigationBarBackButtonHidden(true)
-            .background(Color(red: 251/255, green: 245/255, blue: 242/255))
         }
+        .navigationBarBackButtonHidden(true)
+        .background(Color(red: 251/255, green: 245/255, blue: 242/255))
     }
 }
 
