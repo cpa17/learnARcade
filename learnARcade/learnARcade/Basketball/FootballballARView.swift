@@ -18,6 +18,9 @@ class FootballballARView: ARView {
     private var isShooting = false
     var level: Int = 1
     private var arguments = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    private var startPosition1: SIMD3<Float>?
+    private var startPosition2: SIMD3<Float>?
+    private var startPosition3: SIMD3<Float>?
     
     
     func configuration() {
@@ -37,9 +40,9 @@ class FootballballARView: ARView {
             return
         }
         
-        footballAnchor.football1?.position = SIMD3<Float>(-0.21, 0, 0)
-        footballAnchor.football2?.position = SIMD3<Float>(0, 0, 0)
-        footballAnchor.football3?.position = SIMD3<Float>(0.21, 0, 0)
+        self.startPosition1 = footballAnchor.football1?.position
+        self.startPosition2 = footballAnchor.football2?.position
+        self.startPosition3 = footballAnchor.football3?.position
         
         self.setup()
         self.scene.addAnchor(footballAnchor)
@@ -228,23 +231,19 @@ private extension FootballballARView {
         
         footballAnchor.actions.resetAll.onAction = resetAll(_:)
         
-        switch position.x {
-        case -0.235:
+        if position.x <= -0.1 {
             footballAnchor.actions.sequenceBall1.onAction = shootRightBall(_:)
             footballAnchor.actions.sequenceBall2.onAction = shootWrongBall(_:)
             footballAnchor.actions.sequenceBall3.onAction = shootWrongBall(_:)
-            
-        case -0.025:
+        } else if position.x > -0.1 && position.x <= 0.1 {
             footballAnchor.actions.sequenceBall1.onAction = shootWrongBall(_:)
             footballAnchor.actions.sequenceBall2.onAction = shootRightBall(_:)
             footballAnchor.actions.sequenceBall3.onAction = shootWrongBall(_:)
-
-        case 0.18499999:
+        } else if position.x > 0.1 {
             footballAnchor.actions.sequenceBall1.onAction = shootWrongBall(_:)
             footballAnchor.actions.sequenceBall2.onAction = shootWrongBall(_:)
             footballAnchor.actions.sequenceBall3.onAction = shootRightBall(_:)
-
-        default:
+        } else {
             footballAnchor.actions.sequenceBall1.onAction = shootWrongBall(_:)
             footballAnchor.actions.sequenceBall2.onAction = shootWrongBall(_:)
             footballAnchor.actions.sequenceBall3.onAction = shootWrongBall(_:)
@@ -292,7 +291,10 @@ private extension FootballballARView {
               let question = footballAnchor.findEntity(named: "question"),
               let right = footballAnchor.findEntity(named: "rightEntity"),
               let wrong1 = footballAnchor.findEntity(named: "wrong1Entity"),
-              let wrong2 = footballAnchor.findEntity(named: "wrong2Entity")
+              let wrong2 = footballAnchor.findEntity(named: "wrong2Entity"),
+              let startPosition1,
+              let startPosition2,
+              let startPosition3
         else {
             return
         }
@@ -301,11 +303,11 @@ private extension FootballballARView {
         footballAnchor.removeChild(right)
         footballAnchor.removeChild(wrong1)
         footballAnchor.removeChild(wrong2)
-        footballAnchor.football1?.position = SIMD3<Float>(-0.21, 0, 0)
-        footballAnchor.football2?.position = SIMD3<Float>(0, 0, 0)
-        footballAnchor.football3?.position = SIMD3<Float>(0.21, 0, 0)
+        footballAnchor.football1?.position = startPosition1
+        footballAnchor.football2?.position = startPosition2
+        footballAnchor.football3?.position = startPosition3
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.isShooting = false
             self.setup()
         }
