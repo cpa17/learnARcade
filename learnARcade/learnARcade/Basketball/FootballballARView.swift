@@ -16,14 +16,16 @@ class FootballballARView: ARView {
     
     private var footballAnchor: Football._Football?
     private var isShooting = false
-    var level: Int = 1
+    var level: Int = 0
     private var arguments = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     private var startPosition1: SIMD3<Float>?
     private var startPosition2: SIMD3<Float>?
     private var startPosition3: SIMD3<Float>?
     
     
-    func configuration() {
+    func configuration(level: Int = 0) {
+        
+        self.level = level
         
         let session = self.session
         session.run(self.arConfiguration)
