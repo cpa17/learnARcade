@@ -32,7 +32,7 @@
                                       "configurationBox" : {
                                         "configuration" : {
                                           "target" : [
-                                            "118F06B1-0D7A-47F5-8C29-43FF041582F6"
+                                            "AA43AF5B-066A-4D56-8EB4-4354185C4121"
                                           ],
                                           "userIdentifier" : "rotateDice"
                                         },
@@ -51,23 +51,19 @@
                                     {
                                       "configurationBox" : {
                                         "configuration" : {
-                                          "axis" : [
-                                            0,
-                                            0,
-                                            1
-                                          ],
-                                          "direction" : "clockwise",
-                                          "duration" : 1,
-                                          "iterations" : 2,
+                                          "animationStyle" : "wild",
+                                          "duration" : 0.43000000715255737,
+                                          "emphasisAnimationType" : "spin",
+                                          "iterations" : 1,
                                           "target" : [
-                                            "118F06B1-0D7A-47F5-8C29-43FF041582F6"
+                                            "AA43AF5B-066A-4D56-8EB4-4354185C4121"
                                           ]
                                         },
                                         "name" : {
-                                          "type" : "spin"
+                                          "type" : "emphasis"
                                         }
                                       },
-                                      "identifier" : "B821342A-3719-4B54-AAD6-BD86E2451431",
+                                      "identifier" : "DD549A66-AE8C-44E0-A712-D0CF63244033",
                                       "isEnabled" : true
                                     }
                                   ],
@@ -78,23 +74,19 @@
                                     {
                                       "configurationBox" : {
                                         "configuration" : {
-                                          "axis" : [
-                                            1,
-                                            0,
-                                            0
-                                          ],
-                                          "direction" : "clockwise",
-                                          "duration" : 1,
-                                          "iterations" : 2,
+                                          "animationStyle" : "playful",
+                                          "duration" : 1.0299999713897705,
+                                          "emphasisAnimationType" : "flip",
+                                          "iterations" : 1,
                                           "target" : [
-                                            "118F06B1-0D7A-47F5-8C29-43FF041582F6"
+                                            "AA43AF5B-066A-4D56-8EB4-4354185C4121"
                                           ]
                                         },
                                         "name" : {
-                                          "type" : "spin"
+                                          "type" : "emphasis"
                                         }
                                       },
-                                      "identifier" : "20CB242F-FB42-4CF5-B897-0CF021830627",
+                                      "identifier" : "429E4244-CED1-4E04-9517-26623F64E720",
                                       "isEnabled" : true
                                     }
                                   ],
@@ -152,94 +144,65 @@
                 "children" : {
                   "29151DA4-EC90-465D-BA20-6F28067843EC" : null,
                   "A0D4FB4A-FE93-445E-8B72-E064E29FE922" : null,
-                  "AEBFD555-C975-48F4-9F57-91FBC6CA19B9" : {
+                  "AEBFD555-C975-48F4-9F57-91FBC6CA19B9" : null,
+                  "DDD0E306-029D-4B83-A4DE-B6B5675FD9C6" : {
                     "overrides" : {
+                      "arguments" : [
+                        [
+                          "item",
+                          {
+                            "typeName" : "String",
+                            "value" : "Die"
+                          }
+                        ],
+                        [
+                          "style",
+                          {
+                            "typeName" : "String",
+                            "value" : "Stylized"
+                          }
+                        ]
+                      ],
                       "children" : {
-                        "USDScene" : {
+                        "item" : {
                           "overrides" : {
-                            "arguments" : [
-                              [
-                                "includeSceneScaling",
-                                {
-                                  "typeName" : "Bool",
-                                  "value" : false
-                                }
-                              ],
-                              [
-                                "subpath",
-                                {
-                                  "typeName" : "String",
-                                  "value" : ""
-                                }
-                              ],
-                              [
-                                "url",
-                                {
-                                  "typeName" : "String",
-                                  "value" : "model:2a7f5dbe499efa93e7a3772164f656ae\/Dice.usdz"
-                                }
-                              ],
-                              [
-                                "withDescendants",
-                                {
-                                  "typeName" : "Bool",
-                                  "value" : true
-                                }
-                              ]
-                            ],
-                            "factory" : {
-                              "identifier" : "com.apple.af.FileImportAssetFactory",
-                              "version" : "0.0"
-                            },
+                            "factory" : null,
                             "runtimeAttributes" : [
                               [
                                 "RuntimeIdentifier",
                                 {
                                   "typeName" : "UUID",
-                                  "value" : "D8FCADA9-153F-4BBC-9567-E68D6C0E7D96"
+                                  "value" : "97B31B58-0C51-4279-ABF4-D90716B4D643"
                                 }
                               ]
-                            ]
-                          },
-                          "transform" : {
-                            "matrix" : [
-                              0.0010000000474974513,
-                              0,
-                              0,
-                              0,
-                              0,
-                              0.0010000000474974513,
-                              0,
-                              0,
-                              0,
-                              0,
-                              0.0010000000474974513,
-                              0,
-                              0,
-                              0,
-                              0,
-                              1
                             ]
                           }
                         }
                       },
                       "factory" : {
-                        "identifier" : "com.apple.af.Group",
-                        "version" : "0.0"
+                        "identifier" : "com.apple.rc.af.Die.700281df-bcf2-487c-bf56-aad9a524cdc3",
+                        "version" : "1.0"
                       },
                       "runtimeAttributes" : [
                         [
                           "RuntimeIdentifier",
                           {
                             "typeName" : "UUID",
-                            "value" : "118F06B1-0D7A-47F5-8C29-43FF041582F6"
+                            "value" : "AA43AF5B-066A-4D56-8EB4-4354185C4121"
                           }
                         ],
                         [
                           "entityName",
                           {
                             "typeName" : "String",
-                            "value" : "Dice"
+                            "value" : "dice"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
                           }
                         ],
                         [
@@ -265,34 +228,27 @@
                           "rigidBody-motionType",
                           {
                             "typeName" : "REMotionType",
-                            "value" : "dynamic"
-                          }
-                        ],
-                        [
-                          "rigidBody-shapeType",
-                          {
-                            "typeName" : "String",
-                            "value" : "box"
+                            "value" : "static"
                           }
                         ]
                       ]
                     },
                     "transform" : {
                       "matrix" : [
-                        0.49947479367256165,
+                        3,
                         0,
                         0,
                         0,
                         0,
-                        0.49947452545166016,
+                        3,
                         0,
                         0,
                         0,
                         0,
-                        0.49947473406791687,
+                        3,
                         0,
                         0,
-                        0.021138787269592285,
+                        0,
                         0,
                         1
                       ]
@@ -314,21 +270,21 @@
               "title" : "Dice",
               "viewTransform" : {
                 "cameraTransform" : [
-                  -0.48582911491394043,
-                  -6.7964847971779818e-08,
-                  0.87405377626419067,
+                  -0.47026297450065613,
+                  -4.8636756844189222e-08,
+                  0.88252627849578857,
                   0,
-                  0.77287721633911133,
-                  0.46702420711517334,
-                  0.42959180474281311,
+                  0.84575212001800537,
+                  0.28566056489944458,
+                  0.4506676197052002,
                   0,
-                  -0.40820431709289551,
-                  0.88424444198608398,
-                  -0.22689394652843475,
+                  -0.25210300087928772,
+                  0.95833081007003784,
+                  -0.13433563709259033,
                   0,
-                  -0.69159317016601562,
-                  1.2820689678192139,
-                  -0.31754767894744873,
+                  -0.24041616916656494,
+                  0.58931964635848999,
+                  -0.11773206293582916,
                   1
                 ],
                 "sceneTransform" : [

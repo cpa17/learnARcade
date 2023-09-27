@@ -22,6 +22,8 @@ class FootballballARView: ARView {
     private var startPosition2: SIMD3<Float>?
     private var startPosition3: SIMD3<Float>?
     
+    private let finished: Level = Level()
+    
     
     func configuration(level: Int = 0) {
         
@@ -77,6 +79,7 @@ private extension FootballballARView {
         arguments.shuffle()
         
         if arguments.isEmpty {
+            self.finished.finishedLevel.append(level)
             print("ende")
         }
         

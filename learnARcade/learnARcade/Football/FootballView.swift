@@ -1,15 +1,15 @@
 //
-//  ContentView.swift
+//  FootballView.swift
 //  learnARcade
 //
-//  Created by Pascal Ahlner on 01.08.23.
+//  Created by Pascal Ahlner on 08.09.23.
 //
 
 import SwiftUI
 
-struct DiceView : View {
+struct FootballView: View {
     
-    var diceCount: Int
+    var level: Int = 0
     
     @Environment(\.dismiss)
     var dismiss
@@ -17,9 +17,8 @@ struct DiceView : View {
     private var showingAlert = false
     
     var body: some View {
-        
         ZStack {
-            ARViewContainer(diceCount: diceCount)
+            ARViewContainer(level: level)
                 .navigationBarBackButtonHidden(true)
                 .ignoresSafeArea()
             
@@ -52,24 +51,20 @@ struct DiceView : View {
     }
 }
 
-private extension DiceView {
+private extension FootballView {
     
     struct ARViewContainer: UIViewRepresentable {
         
-        var diceCount: Int
+        var level: Int = 0
         
-        func makeUIView(context: Context) -> DiceARView {
+        func makeUIView(context: Context) -> FootballballARView {
             
-            let arView = DiceARView(
-                frame: .zero,
-                cameraMode: .ar,
-                automaticallyConfigureSession: true
-            )
-            arView.configuration(diceCount)
+            let arView = FootballballARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
+            arView.configuration(level: self.level)
             
             return arView
         }
         
-        func updateUIView(_ uiView: DiceARView, context: Context) {}
+        func updateUIView(_ uiView: FootballballARView, context: Context) {}
     }
 }

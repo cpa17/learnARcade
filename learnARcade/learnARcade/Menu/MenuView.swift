@@ -30,7 +30,7 @@ struct MenuView: View {
                 
                 TextField(
                     "",
-                    text: $name,
+                    text: self.$name.max(10),
                     prompt: Text("Gib deinen Namen hier ein...").foregroundColor(.gray)
                 )
                 .foregroundColor(.black)
@@ -54,6 +54,11 @@ struct MenuView: View {
                 .cornerRadius(50)
                 
                 Spacer()
+                
+                Image(.ar)
+                    .resizable()
+                    .frame(width: 250, height: 250, alignment: .center)
+                    .padding()
             }
             .background(Color(red: 251/255, green: 245/255, blue: 242/255))
         }
@@ -78,6 +83,18 @@ extension Text {
                 
             )
         }
+    }
+}
+
+extension Binding where Value == String {
+    
+    func max(_ limit: Int) -> Self {
+        if self.wrappedValue.count > limit {
+            DispatchQueue.main.async {
+                self.wrappedValue = String(self.wrappedValue.dropLast())
+            }
+        }
+        return self
     }
 }
 
