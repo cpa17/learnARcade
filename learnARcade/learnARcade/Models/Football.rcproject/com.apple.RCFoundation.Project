@@ -370,6 +370,37 @@
                             }
                           ],
                           "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+
+                                          ],
+                                          "userIdentifier" : "setupNumbers"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "82E359CF-EEF9-4F65-A35B-98B27437299C",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "A3398273-EEC5-4877-9A3F-7B7D35F7ECB5",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
                         }
                       ],
                       "color" : [
@@ -953,9 +984,9 @@
                   0.33464536070823669,
                   0.93608379364013672,
                   0,
-                  0.16021633148193359,
-                  1.0243840217590332,
-                  4.6297569274902344,
+                  0.21292763948440552,
+                  1.5115351676940918,
+                  4.4494962692260742,
                   1
                 ],
                 "sceneTransform" : [
