@@ -15,6 +15,12 @@ struct GamesView: View {
     
     let name: String
     
+    init(name: String) {
+        
+        self.name = name
+        UserDefaults.standard.setValue(name, forKey: "name")
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -70,7 +76,7 @@ struct GamesView: View {
                     .cornerRadius(50)
                     
                     NavigationLink {
-                        DiceMenuView()
+                        DiceHighScoreView()
                     } label: {
                         Text("Highscore")
                             .padding(5)
@@ -110,11 +116,11 @@ struct GamesView: View {
                     .cornerRadius(50)
                     
                     ProgressView(
-                        value: Double(self.value.count),
+                        value: 0,
                         total: 10,
                         label: {},
                         currentValueLabel: { 
-                            Text(self.value.count.description + "/10")
+                            Text("0" + "/10")
                                 .font(.headline)
                                 .foregroundStyle(.gray)
                         }

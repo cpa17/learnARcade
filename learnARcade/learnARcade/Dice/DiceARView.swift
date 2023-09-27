@@ -150,7 +150,7 @@ private extension DiceARView {
     @objc
     func handleCorrectAnswer() {
         
-        self.score += 1
+        self.score += self.diceCount
         guard let scoreLabel else {
             return
         }
@@ -191,6 +191,8 @@ private extension DiceARView {
                 self.gameOverView?.backgroundColor = UIColor(red: 251/255, green: 245/255, blue: 242/255, alpha: 1.0)
                 
                 self.gameOverView?.gameOverButton.addTarget(self, action: #selector(self.handleNewStart), for: .touchUpInside)
+                
+                self.safeScore()
                 
                 self.addSubview(self.gameOverView!)
             },
@@ -249,17 +251,17 @@ private extension DiceARView {
         
         switch randomInt {
         case 1:
-            self.rotation(entity: entity, angleX: 0, angleZ: 0)
-        case 2:
-            self.rotation(entity: entity, angleX: 0, angleZ: 90)
-        case 3:
-            self.rotation(entity: entity, angleX: 90, angleZ: 0)
-        case 4:
-            self.rotation(entity: entity, angleX: -90, angleZ: 0)
-        case 5:
-            self.rotation(entity: entity, angleX: 0, angleZ: -90)
-        case 6:
             self.rotation(entity: entity, angleX: 0, angleZ: 180)
+        case 2:
+            self.rotation(entity: entity, angleX: 0, angleZ: -90)
+        case 3:
+            self.rotation(entity: entity, angleX: -90, angleZ: 0)
+        case 4:
+            self.rotation(entity: entity, angleX: 0, angleZ: 90)
+        case 5:
+            self.rotation(entity: entity, angleX: 90, angleZ: 0)
+        case 6:
+            self.rotation(entity: entity, angleX: 0, angleZ: 0)
         default:
             fatalError("not possible number")
         }
@@ -336,6 +338,114 @@ private extension DiceARView {
             completion: nil
         )
     }
+    
+    func safeScore() {
+        
+        switch self.score {
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore1"):
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore8"), forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore7"), forKey: "highScore8")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore6"), forKey: "highScore7")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore5"), forKey: "highScore6")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore4"), forKey: "highScore5")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore3"), forKey: "highScore4")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore2"), forKey: "highScore3")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore1"), forKey: "highScore2")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name8"), forKey: "name9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name7"), forKey: "name8")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name6"), forKey: "name7")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name5"), forKey: "name6")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name4"), forKey: "name5")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name3"), forKey: "name4")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name2"), forKey: "name3")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name1"), forKey: "name2")
+            UserDefaults.standard.setValue(self.score, forKey: "highScore1")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name1")
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore2"):
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore8"), forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore7"), forKey: "highScore8")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore6"), forKey: "highScore7")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore5"), forKey: "highScore6")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore4"), forKey: "highScore5")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore3"), forKey: "highScore4")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore2"), forKey: "highScore3")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name8"), forKey: "name9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name7"), forKey: "name8")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name6"), forKey: "name7")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name5"), forKey: "name6")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name4"), forKey: "name5")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name3"), forKey: "name4")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name2"), forKey: "name3")
+            UserDefaults.standard.setValue(self.score, forKey: "highScore2")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name2")
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore3"):
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore8"), forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore7"), forKey: "highScore8")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore6"), forKey: "highScore7")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore5"), forKey: "highScore6")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore4"), forKey: "highScore5")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore3"), forKey: "highScore4")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name8"), forKey: "name9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name7"), forKey: "name8")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name6"), forKey: "name7")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name5"), forKey: "name6")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name4"), forKey: "name5")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name3"), forKey: "name4")
+            UserDefaults.standard.setValue(self.score, forKey: "highScore3")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name3")
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore4"):
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore8"), forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore7"), forKey: "highScore8")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore6"), forKey: "highScore7")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore5"), forKey: "highScore6")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore4"), forKey: "highScore5")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name8"), forKey: "name9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name7"), forKey: "name8")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name6"), forKey: "name7")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name5"), forKey: "name6")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name4"), forKey: "name5")
+            UserDefaults.standard.setValue(self.score, forKey: "highScore4")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name4")
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore5"):
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore8"), forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore7"), forKey: "highScore8")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore6"), forKey: "highScore7")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore5"), forKey: "highScore6")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name8"), forKey: "name9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name7"), forKey: "name8")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name6"), forKey: "name7")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name5"), forKey: "name6")
+            UserDefaults.standard.setValue(self.score, forKey: "highScore5")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name5")
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore6"):
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore8"), forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore7"), forKey: "highScore8")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore6"), forKey: "highScore7")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name8"), forKey: "name9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name7"), forKey: "name8")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name6"), forKey: "name7")
+            UserDefaults.standard.setValue(self.score, forKey: "highScore6")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name6")
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore7"):
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore8"), forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore7"), forKey: "highScore8")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name8"), forKey: "name9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name7"), forKey: "name8")
+            UserDefaults.standard.setValue(self.score, forKey: "highScore7")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name7")
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore8"):
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "highScore8"), forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name8"), forKey: "name9")
+            UserDefaults.standard.setValue(self.score, forKey: "highScore8")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name8")
+        case _ where self.score > UserDefaults.standard.integer(forKey: "highScore9"):
+            UserDefaults.standard.setValue(self.score, forKey: "highScore9")
+            UserDefaults.standard.setValue(UserDefaults.standard.string(forKey: "name"), forKey: "name9")
+           
+        default:
+            return
+        }
+    }
 }
 
 
@@ -376,41 +486,5 @@ private extension DiceARView {
         }
         
         return button
-    }
-}
-
-class GameOverView: UIView {
-    
-    private var gameOverLabel = UILabel(frame: CGRect(
-        x: .zero,
-        y: Int(UIScreen.main.bounds.height)/2 - 100,
-        width: Int(UIScreen.main.bounds.width),
-        height: 50)
-    )
-    
-    var gameOverButton = UIButton(frame: CGRect(
-        x: Int(UIScreen.main.bounds.width)/2 - 75,
-        y: Int(UIScreen.main.bounds.height)/2,
-        width: 150,
-        height: 40)
-    )
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        self.gameOverLabel.text = "Game over"
-        self.gameOverLabel.textAlignment = .center
-        self.gameOverLabel.textColor = .orange
-        self.gameOverLabel.font = .init(name: "Ribeye-Regular", size: 42)
-        
-        self.gameOverButton.setTitle("Neustart", for: .normal)
-        self.gameOverButton.backgroundColor = .orange
-        self.gameOverButton.titleLabel?.font = .boldSystemFont(ofSize: 24)
-        self.gameOverButton.titleLabel?.textColor = .white
-        self.gameOverButton.layer.cornerRadius = 0.5 * self.gameOverButton.bounds.size.height
-        self.gameOverButton.clipsToBounds = true
-        
-        self.addSubview(gameOverLabel)
-        self.addSubview(gameOverButton)
     }
 }

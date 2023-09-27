@@ -10,6 +10,8 @@
 		E53F33C32AC492B40015E871 /* DiceMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F33C22AC492B40015E871 /* DiceMenuView.swift */; };
 		E53F33C52AC494E20015E871 /* DiceCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F33C42AC494E20015E871 /* DiceCustomView.swift */; };
 		E53F33CB2AC4B6260015E871 /* FootballMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F33CA2AC4B6260015E871 /* FootballMenuView.swift */; };
+		E53F33CF2AC4CB450015E871 /* GemeoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F33CE2AC4CB450015E871 /* GemeoverView.swift */; };
+		E53F33D22AC4CCAA0015E871 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F33D12AC4CCAA0015E871 /* WinView.swift */; };
 		E55A1AC82A790F5B009014E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1AC72A790F5B009014E2 /* AppDelegate.swift */; };
 		E55A1ACA2A790F5B009014E2 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1AC92A790F5B009014E2 /* DiceView.swift */; };
 		E55A1ACE2A790F5C009014E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55A1ACD2A790F5C009014E2 /* Assets.xcassets */; };
@@ -17,6 +19,7 @@
 		E55B10082A94A9F400BBB5C2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55B10072A94A9F400BBB5C2 /* MenuView.swift */; };
 		E55B100F2A94ADCC00BBB5C2 /* Ribeye-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E55B100E2A94ADCC00BBB5C2 /* Ribeye-Regular.ttf */; };
 		E55B10122A94C5CB00BBB5C2 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55B10112A94C5CB00BBB5C2 /* GamesView.swift */; };
+		E575C77D2AC4D5A300FCCE8D /* DiceHighScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575C77C2AC4D5A300FCCE8D /* DiceHighScoreView.swift */; };
 		E57CCBFC2AAB45220082AC6C /* FootballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCBFB2AAB45220082AC6C /* FootballView.swift */; };
 		E57CCBFE2AAB453A0082AC6C /* FootballballARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCBFD2AAB453A0082AC6C /* FootballballARView.swift */; };
 		E57CCC022AAB56450082AC6C /* Football.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E57CCC012AAB56450082AC6C /* Football.rcproject */; };
@@ -28,6 +31,8 @@
 		E53F33C22AC492B40015E871 /* DiceMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceMenuView.swift; sourceTree = "<group>"; };
 		E53F33C42AC494E20015E871 /* DiceCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceCustomView.swift; sourceTree = "<group>"; };
 		E53F33CA2AC4B6260015E871 /* FootballMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballMenuView.swift; sourceTree = "<group>"; };
+		E53F33CE2AC4CB450015E871 /* GemeoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemeoverView.swift; sourceTree = "<group>"; };
+		E53F33D12AC4CCAA0015E871 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		E55A1AC42A790F5B009014E2 /* learnARcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnARcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55A1AC72A790F5B009014E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E55A1AC92A790F5B009014E2 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		E55B100B2A94ABF400BBB5C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E55B100E2A94ADCC00BBB5C2 /* Ribeye-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ribeye-Regular.ttf"; sourceTree = "<group>"; };
 		E55B10112A94C5CB00BBB5C2 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		E575C77C2AC4D5A300FCCE8D /* DiceHighScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceHighScoreView.swift; sourceTree = "<group>"; };
 		E57CCBFB2AAB45220082AC6C /* FootballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballView.swift; sourceTree = "<group>"; };
 		E57CCBFD2AAB453A0082AC6C /* FootballballARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballballARView.swift; sourceTree = "<group>"; };
 		E57CCC012AAB56450082AC6C /* Football.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Football.rcproject; sourceTree = "<group>"; };
@@ -55,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E53F33D02AC4CC880015E871 /* Finish */ = {
+			isa = PBXGroup;
+			children = (
+				E53F33CE2AC4CB450015E871 /* GemeoverView.swift */,
+				E53F33D12AC4CCAA0015E871 /* WinView.swift */,
+			);
+			path = Finish;
+			sourceTree = "<group>";
+		};
 		E55A1ABB2A790F5B009014E2 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +94,7 @@
 				E55B10092A94A9FD00BBB5C2 /* Menu */,
 				E58C9B312A8F503900A81E7E /* App */,
 				E57CCBFA2AAB44FA0082AC6C /* Football */,
+				E53F33D02AC4CC880015E871 /* Finish */,
 				E58C9B302A8F501800A81E7E /* Dice */,
 				E5B168E72A827972002654AE /* Models */,
 				E55A1ACF2A790F5C009014E2 /* Preview Content */,
@@ -130,6 +146,7 @@
 				E58C9B2A2A8B793700A81E7E /* DiceARView.swift */,
 				E53F33C22AC492B40015E871 /* DiceMenuView.swift */,
 				E53F33C42AC494E20015E871 /* DiceCustomView.swift */,
+				E575C77C2AC4D5A300FCCE8D /* DiceHighScoreView.swift */,
 			);
 			path = Dice;
 			sourceTree = "<group>";
@@ -227,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E53F33CB2AC4B6260015E871 /* FootballMenuView.swift in Sources */,
+				E53F33D22AC4CCAA0015E871 /* WinView.swift in Sources */,
 				E55B10122A94C5CB00BBB5C2 /* GamesView.swift in Sources */,
 				E55B10082A94A9F400BBB5C2 /* MenuView.swift in Sources */,
 				E57CCBFC2AAB45220082AC6C /* FootballView.swift in Sources */,
@@ -235,8 +253,10 @@
 				E57CCC022AAB56450082AC6C /* Football.rcproject in Sources */,
 				E58C9B292A86511900A81E7E /* Dice.rcproject in Sources */,
 				E55A1AC82A790F5B009014E2 /* AppDelegate.swift in Sources */,
+				E575C77D2AC4D5A300FCCE8D /* DiceHighScoreView.swift in Sources */,
 				E53F33C32AC492B40015E871 /* DiceMenuView.swift in Sources */,
 				E53F33C52AC494E20015E871 /* DiceCustomView.swift in Sources */,
+				E53F33CF2AC4CB450015E871 /* GemeoverView.swift in Sources */,
 				E58C9B2B2A8B793700A81E7E /* DiceARView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

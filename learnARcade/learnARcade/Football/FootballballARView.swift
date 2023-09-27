@@ -16,13 +16,12 @@ class FootballballARView: ARView {
     
     private var footballAnchor: Football._Football?
     private var isShooting = false
-    var level: Int = 0
+    private var level: Int = 0
     private var arguments = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     private var startPosition1: SIMD3<Float>?
     private var startPosition2: SIMD3<Float>?
     private var startPosition3: SIMD3<Float>?
-    
-    private let finished: Level = Level()
+    private var winView: WinView?
     
     
     func configuration(level: Int = 0) {
@@ -79,7 +78,11 @@ private extension FootballballARView {
         arguments.shuffle()
         
         if arguments.isEmpty {
-            self.finished.finishedLevel.append(level)
+            
+            self.winView = WinView(frame: frame)
+            self.winView?.backgroundColor = UIColor(red: 251/255, green: 245/255, blue: 242/255, alpha: 1.0)
+            self.addSubview(self.winView!)
+            
             print("ende")
         }
         
