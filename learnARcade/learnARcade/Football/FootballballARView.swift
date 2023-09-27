@@ -83,7 +83,10 @@ private extension FootballballARView {
             self.winView?.backgroundColor = UIColor(red: 251/255, green: 245/255, blue: 242/255, alpha: 1.0)
             self.addSubview(self.winView!)
             
-            UserDefaults.standard.setValue(self.level, forKey: "level")
+            if self.level > UserDefaults.standard.integer(forKey: "level") {
+                UserDefaults.standard.setValue(self.level, forKey: "level")
+            }
+            self.winView?.winButton.addTarget(self, action: #selector(self.handleNewStart), for: .touchUpInside)
             
             print("ende")
         }
@@ -321,5 +324,14 @@ private extension FootballballARView {
             self.isShooting = false
             self.setup()
         }
+    }
+    
+    @objc
+    func handleNewStart() {
+        
+        self.arguments = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        self.winView?.removeFromSuperview()
+        
+        self.setup()
     }
 }

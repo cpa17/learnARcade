@@ -26,7 +26,7 @@ class WinView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        self.winLabel.text = "Du hast es Geschaft!"
+        self.winLabel.text = "Level Geschafft!"
         self.winLabel.textAlignment = .center
         self.winLabel.textColor = .orange
         self.winLabel.font = .init(name: "Ribeye-Regular", size: 42)
