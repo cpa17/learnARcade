@@ -83,6 +83,8 @@ private extension FootballballARView {
             self.winView?.backgroundColor = UIColor(red: 251/255, green: 245/255, blue: 242/255, alpha: 1.0)
             self.addSubview(self.winView!)
             
+            UserDefaults.standard.setValue(self.level, forKey: "level")
+            
             print("ende")
         }
         

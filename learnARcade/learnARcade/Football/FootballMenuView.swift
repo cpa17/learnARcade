@@ -29,31 +29,31 @@ struct FootballMenuView: View {
                 .padding()
             
             HStack {
-                CusNavLink {
+                CusNavLink(level: 0) {
                     FootballView(level: 1)
                 } label: {
                     Text("1")
                 }
                 
-                CusNavLink {
+                CusNavLink(level: 1) {
                     FootballView(level: 2)
                 } label: {
                     Text("2")
                 }
                 
-                CusNavLink {
+                CusNavLink(level: 2) {
                     FootballView(level: 3)
                 } label: {
                     Text("3")
                 }
                 
-                CusNavLink {
+                CusNavLink(level: 3) {
                     FootballView(level: 4)
                 } label: {
                     Text("4")
                 }
                 
-                CusNavLink {
+                CusNavLink(level: 4) {
                     FootballView(level: 5)
                 } label: {
                     Text("5")
@@ -62,31 +62,31 @@ struct FootballMenuView: View {
             
             HStack {
                 
-                CusNavLink {
+                CusNavLink(level: 5) {
                     FootballView(level: 6)
                 } label: {
                     Text("6")
                 }
                 
-                CusNavLink {
+                CusNavLink(level: 6) {
                     FootballView(level: 7)
                 } label: {
                     Text("7")
                 }
                 
-                CusNavLink {
+                CusNavLink(level: 7) {
                     FootballView(level: 8)
                 } label: {
                     Text("8")
                 }
                 
-                CusNavLink {
+                CusNavLink(level: 8) {
                     FootballView(level: 9)
                 } label: {
                     Text("9")
                 }
                 
-                CusNavLink {
+                CusNavLink(level: 9) {
                     FootballView(level: 10)
                 } label: {
                     Text("10")
@@ -96,7 +96,7 @@ struct FootballMenuView: View {
             Divider()
                 .padding()
             
-            CusNavLink {
+            CusNavLink(level: 10) {
                 FootballView()
             } label: {
                 Text("Übung")
@@ -104,6 +104,7 @@ struct FootballMenuView: View {
             
             Spacer()
         }
+        .onAppear()
         .background(Color(red: 251/255, green: 245/255, blue: 242/255))
     }
 }
@@ -111,19 +112,26 @@ struct FootballMenuView: View {
 private extension FootballMenuView {
     
     struct CusNavLink<Label: View, Destination: View>: View {
-
+        
         let destination: Destination
         let label : Label
-
+        let level: Int
+        
+        @AppStorage("level")
+        var userdefaults: Int = 0
+        
         init(
+            level: Int,
             destination: () -> Destination,
             @ViewBuilder label: () -> Label
         ) {
             self.destination = destination()
             self.label = label()
+            self.level = level
         }
-
+        
         var body: some View {
+            
             NavigationLink {
                 destination
             } label: {
@@ -135,6 +143,7 @@ private extension FootballMenuView {
             .foregroundColor(.white)
             .font(.title2)
             .cornerRadius(50)
+            .disabled(!(self.level <= self.userdefaults))
         }
     }
 }
