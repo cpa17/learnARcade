@@ -116,11 +116,11 @@ struct GamesView: View {
                     .cornerRadius(50)
                     
                     ProgressView(
-                        value: 0,
+                        value: Double(UserDefaults.standard.integer(forKey: "level")),
                         total: 10,
                         label: {},
                         currentValueLabel: { 
-                            Text("0" + "/10")
+                            Text(UserDefaults.standard.integer(forKey: "level").description + "/10")
                                 .font(.headline)
                                 .foregroundStyle(.gray)
                         }
